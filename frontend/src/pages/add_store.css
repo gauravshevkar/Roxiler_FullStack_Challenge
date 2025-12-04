@@ -1,0 +1,32 @@
+.container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+.add-user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-user-form input, 
+.add-user-form textarea, 
+.add-user-form select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.msg {
+  color: green;
+  font-weight: bold;
+}
+
+button {
+  padding: 12px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}

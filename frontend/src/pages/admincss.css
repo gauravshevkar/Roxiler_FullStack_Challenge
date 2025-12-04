@@ -1,0 +1,116 @@
+/* General Container Styling */
+.admin-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #343a40;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #007bff;
+}
+
+/* Metrics Summary Cards */
+.metrics-summary {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.metric-card {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #dee2e6;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card h3 {
+    font-size: 18px;
+    color: #495057;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.metric-value {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.metric-card span {
+    display: block;
+    color: #007bff;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Color Coding for Cards */
+.metric-card.users .metric-value { color: #28a745; }
+.metric-card.stores .metric-value { color: #ffc107; }
+.metric-card.ratings .metric-value { color: #dc3545; }
+
+
+/* Action Buttons */
+.section-title {
+    color: #343a40;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-action {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn-action.primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-action.secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-action:hover {
+    opacity: 0.9;
+}
+
+/* Loading and Error States */
+.loading, .error {
+    text-align: center;
+    padding: 30px;
+    font-size: 20px;
+}
+
+.error {
+    color: #dc3545;
+}

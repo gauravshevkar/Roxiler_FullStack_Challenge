@@ -1,0 +1,91 @@
+.admin-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #343a40; 
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff; 
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 15px;
+    margin: 0 20px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none; 
+}
+
+.nav-btn:hover {
+    background-color: #495057;
+}
+
+.nav-btn.add-link {
+    background-color: #28a745; 
+    font-weight: 600;
+}
+
+.nav-btn.add-link:hover {
+    background-color: #218838;
+}
+
+/* Logout button styling */
+.nav-logout-btn {
+    background-color: #dc3545; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.nav-logout-btn:hover {
+    background-color: #c82333;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+    .admin-navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .navbar-logo, .nav-logout-btn {
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .navbar-links {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}

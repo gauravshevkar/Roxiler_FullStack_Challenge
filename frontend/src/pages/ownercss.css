@@ -1,0 +1,105 @@
+/* General Container Styling */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Metrics Summary Cards */
+.metrics-summary {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.metric-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    text-align: center;
+}
+
+.metric-card h3 {
+    color: #6c757d;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.rating-value {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffc107; 
+}
+
+.rating-count {
+    font-size: 32px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Ratings Table */
+.section-title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.ratings-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ratings-table th, .ratings-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.ratings-table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.ratings-table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.ratings-table tr:hover {
+    background-color: #e9e9e9;
+}
+
+/* Loading and Error States */
+.loading, .error {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+.error {
+    color: #dc3545;
+    border: 1px solid #dc3545;
+    background-color: #f8d7da;
+    border-radius: 4px;
+}

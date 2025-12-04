@@ -1,0 +1,10 @@
+.container { max-width:1100px; margin:20px auto; padding:16px; font-family:Arial, sans-serif; }
+.filter-row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:12px; }
+.filter-row input, .filter-row select { padding:8px 10px; border-radius:6px; border:1px solid #ddd; min-width:160px; }
+.btn { padding:8px 12px; background:#111; color:#fff; border-radius:6px; border:none; cursor:pointer; }
+.btn.muted { background:#eee; color:#111; }
+.spacer { flex:1; }
+.list-table { width:100%; border-collapse:collapse; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
+.list-table th, .list-table td { padding:10px 12px; border-bottom:1px solid #f0f0f0; text-align:left; }
+.list-table thead th { background:#fafafa; cursor:pointer; user-select:none; }
+.loading, .error, .no-results { padding:18px; }
