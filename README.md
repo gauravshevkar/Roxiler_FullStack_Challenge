@@ -15,6 +15,30 @@ A complete full-stack web application where:
   - Manage store list
 
 ---
+## LIVE DEMO : 
+ m
+  - A full-stack Store Rating System built with React + Node.js + Express + MySQL, featuring role-based access for users, owners, and admins.
+    Includes store ratings, owner analytics dashboard, admin management panel, and secure JWT authentication.
+  
+  - https://roxiler-frontend-elag.onrender.co
+
+  - ### **Admin  Login Credentials for Live demo**
+```
+email: admin@gmail.com
+password: 123
+```
+
+### **Store Owner Login Credentials for Live demo**
+```
+email: owner1@gmail.com
+password: 123
+```
+### **Normal User Login Credentials for Live demo**
+```
+email: user1@gmail.com
+password: 1234
+```
+---
 
 ## Tech Stack
 
