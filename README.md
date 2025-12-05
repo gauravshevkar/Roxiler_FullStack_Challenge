@@ -70,46 +70,57 @@ USE roxiler_db;
 ### ➤ **Users Table**
 ```sql
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `role` enum('user','owner','admin') DEFAULT 'user',
   `createdAt` datetime DEFAULT current_timestamp(),
-  `updatedAt` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updatedAt` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 ```
 
 ### ➤ **Stores Table**
 ```sql
-CREATE TABLE stores (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(200) NOT NULL,
-  email VARCHAR(255) NOT NULL,
-  address VARCHAR(255) NOT NULL,
-  ownerId INT DEFAULT NULL,
-  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  
-  FOREIGN KEY (ownerId) REFERENCES users(id) ON DELETE SET NULL
-);
+CREATE TABLE `stores` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `ownerId` int(11) DEFAULT NULL,
+  `createdAt` datetime DEFAULT current_timestamp(),
+  `updatedAt` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `ownerId` (`ownerId`),
+  CONSTRAINT `stores_ibfk_1` FOREIGN KEY (`ownerId`) 
+    REFERENCES `Users` (`id`) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 ```
 
 ### ➤ **Ratings Table**
 ```sql
-CREATE TABLE ratings (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  ratingValue INT NOT NULL CHECK (ratingValue BETWEEN 1 AND 5),
-  userId INT NOT NULL,
-  storeId INT NOT NULL,
-  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  
-  FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE,
-  FOREIGN KEY (storeId) REFERENCES stores(id) ON DELETE CASCADE
-);
+CREATE TABLE `ratings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ratingValue` int(11) NOT NULL CHECK (`ratingValue` BETWEEN 1 AND 5),
+  `userId` int(11) NOT NULL,
+  `storeId` int(11) NOT NULL,
+  `createdAt` datetime DEFAULT current_timestamp(),
+  `updatedAt` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `userId` (`userId`),
+  KEY `storeId` (`storeId`),
+  CONSTRAINT `ratings_ibfk_1` FOREIGN KEY (`userId`) 
+      REFERENCES `Users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `ratings_ibfk_2` FOREIGN KEY (`storeId`) 
+      REFERENCES `stores` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 ```
 
 ### ➤ **INSERT ONLY ADMIN USER**
