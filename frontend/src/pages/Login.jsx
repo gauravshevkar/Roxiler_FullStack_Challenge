@@ -130,6 +130,20 @@ const handleLogin = async (e) => {
           )}
         </div>
       </div>
+            <p style={{
+    color: "white",
+    position: "absolute",
+  
+    bottom: "10px",
+    left: "0",
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "0 90px",
+    fontSize: "13px",
+    
+  }}
+><span>email: admin@gmail.com password: 123</span> <span>email: owner1@gmail.com password: 123</span> <span>email: user1@gmail.com password: 1234</span></p>
     </div>
   );
 }
